@@ -1,0 +1,22 @@
+@layout('layouts/main')
+@set('title', 'todos')
+@section('body')
+<div class="container">
+    <div class="row">
+        <h2>Todo List</h2>
+    </div>
+    @each(todo in todos)
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <p>{{todo.title}}</p>
+            @if(!todo.completed)
+            <button type="button" class="btn btn-primary">Mark as completed</button>
+            @end
+        </div>
+        <div class="col"></div>
+        
+    </div>
+    @end
+</div>
+@end
